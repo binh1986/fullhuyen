@@ -11,7 +11,7 @@
     <style>
         #map {
             height: 100vh;
-            width: calc(100% - 250px);
+            width: 100%;
             top: 0;
             right: 0;
             position: absolute;
@@ -26,12 +26,16 @@
         }
         .sidebar {
             width: 250px;
-            background-color: #f8f9fa;
+            background:rgba(255,255,255, 0);
             overflow-y: auto;
             padding: 20px;
-            height: 100vh;
-            backgrop-filter:blur(1px);
-            z-index:1000;
+            height:100vh;
+            backdrop-filter: blur(1px);
+            z-index: 1000;
+        }
+        .sidebar.no-blur{
+            backdrop-filter: none;
+            background: rgba(255,255,255, 0.05);
         }
         .huyen-item {
             cursor: pointer;
@@ -43,6 +47,7 @@
             text-align: center;
             font-size: 14px;
             transition: background-color 0.3s, transform 0.3s;
+            z-index: 1000;
         }
         .huyen-item:hover {
             background-color: #0056b3;
@@ -73,13 +78,9 @@
                 width: 100%;
             }
             .sidebar {
-                width: 20%;
-                max-width: 300px;
-                height: 100vh;
+                width: 100%;
+                height: auto;
                 padding: 10px;
-                position: absolute;
-                left: 0;
-                background: rgba(255, 255, 255, 0.9);
             }
             .huyen-item, .xa-item {
                 font-size: 12px;
@@ -205,5 +206,7 @@
 </script>
 <!-- Nhúng Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
 </body>
 </html>
